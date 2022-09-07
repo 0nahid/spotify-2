@@ -4,8 +4,10 @@ import React from 'react';
 import { FcGoogle } from "react-icons/fc";
 
 export default function login({ providers }) {
+
     const { data, status } = useSession();
     const router = useRouter();
+
     // console.log(data,status);
     if (status === "loading") {
         return <div>Loading...</div>
@@ -13,6 +15,7 @@ export default function login({ providers }) {
     if (status === "authenticated") {
         router.push("/");
     }
+    
     return (
         <div className="flex items-center justify-center h-screen">
             {
