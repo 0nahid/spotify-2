@@ -1,8 +1,10 @@
-import { getProviders, signIn } from "next-auth/react";
+import { getProviders, signIn, useSession } from "next-auth/react";
 import React from 'react';
 import { FcGoogle } from "react-icons/fc";
 
 export default function login({ providers }) {
+    const {data,session} = useSession();
+    // console.log(data,session);
 
     return (
         <div className="flex items-center justify-center h-screen">

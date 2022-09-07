@@ -21,9 +21,10 @@ export default NextAuth({
     },
     callbacks: {
         session: async ({ token, session }) => {
-            // console.log(`JWT` , token);
-            // console.log(`Session` , session);
-            return Promise.resolve(session);
+            if(session?.user && token?.sub) {
+                console.log(`token` , token);
+            }
+            return session;
         }
     }
 });
